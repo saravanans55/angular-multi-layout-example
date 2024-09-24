@@ -1,24 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';  // Import RouterModule
+import { RouterModule, RouterOutlet, Routes } from '@angular/router';  // Import RouterModule
 import { SecuredLayoutComponent } from './secured-layout/secured.layout.component';
 import { SECURED_ROUTES } from './secured.routes';
-
-const routes:Routes = [
-  {
-    path: '',
-    component: SecuredLayoutComponent,
-    children: SECURED_ROUTES  // Use PUBLIC_ROUTES here
-  }
-];
+import { ProfileComponent } from './profile/profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    SecuredLayoutComponent
+    SecuredLayoutComponent,
+    DashboardComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(SECURED_ROUTES),
+    RouterOutlet
   ],
   exports: [SecuredLayoutComponent]
 })

@@ -3,22 +3,18 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { PublicLayoutComponent } from './public-layout/public.layout.component';
 import { PUBLIC_ROUTES } from './public.routes';
-
-const routes:Routes = [
-  {
-    path: '',
-    component: PublicLayoutComponent,
-    children: PUBLIC_ROUTES
-  }
-];
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
-    PublicLayoutComponent
+    PublicLayoutComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(PUBLIC_ROUTES)
   ],
   exports: [PublicLayoutComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA]
