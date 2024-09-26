@@ -6,6 +6,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouterOutlet } from "@angular/router";
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations : [
@@ -18,9 +19,11 @@ import { RouterModule } from '@angular/router';
     RouterOutlet,
     NoopAnimationsModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
   ],
-  providers : [],
+  providers : [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA]
 })

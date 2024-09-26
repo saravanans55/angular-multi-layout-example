@@ -1,2 +1,13 @@
-<a [routerLink]="['/signup']" routerLinkActive="router-link-active">Signup</a>
-<h1>Login</h1>
+
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="25">
+    <form>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Ex. pat@example.com">
+      </mat-form-field>
+    </form>
+
+    <a [routerLink]="['/signup']" routerLinkActive="router-link-active">Signup</a>
+  </div>
+</div>
