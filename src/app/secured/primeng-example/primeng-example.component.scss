@@ -1,0 +1,31 @@
+.img-card {
+  display: inline-block;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.card {
+  background: var(--surface-card);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.carousel-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+/* Dragging preview */
+.p-draggable {
+  cursor: move;
+  opacity: 0.8;
+}
+
+.p-droppable {
+  border: 1px dashed #ccc;
+}
+
+.container-box{
+  padding: 50px;
+}

@@ -7,6 +7,7 @@ import { RouterOutlet } from "@angular/router";
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations : [
@@ -20,6 +21,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     NoopAnimationsModule,
     BrowserAnimationsModule,
     RouterModule,
+    MatIconModule
   ],
   providers : [
     provideAnimationsAsync()

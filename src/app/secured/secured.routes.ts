@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SecuredLayoutComponent } from './secured-layout/secured.layout.component';
+import { PrimengExampleComponent } from './primeng-example/primeng-example.component';
 
 export const SECURED_ROUTES:Routes = [
   {
@@ -15,6 +16,10 @@ export const SECURED_ROUTES:Routes = [
       {
         path : "profile",
         component : ProfileComponent
+      },
+      {
+        path : "primeng",
+        component : PrimengExampleComponent
       }
     ]
   }
