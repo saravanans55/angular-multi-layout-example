@@ -29,3 +29,30 @@
 .container-box{
   padding: 50px;
 }
+
+
+/* Increase the size of the chevron icons */
+.p-carousel-prev, .p-carousel-next {
+  font-size: 3rem; /* Adjust this value to increase/decrease size */
+}
+
+/* Optionally, you can adjust the size of the button itself */
+.p-carousel-prev, .p-carousel-next {
+  width: 150px; /* Adjust width as needed */
+  height: 150px; /* Adjust height as needed */
+}
+
+/* If you want to center the icons */
+.p-carousel-prev .p-carousel-icon,
+.p-carousel-next .p-carousel-icon {
+  line-height: 150px; /* Match this with height for vertical centering */
+}
+::ng-deep .p-carousel-prev, ::ng-deep .p-carousel-next {
+  font-size: 13rem; /* Adjust this value to increase/decrease size */
+}
+// :host ::ng-deep p-carousel {
+//   //On later realease of PrimeNG, this can be done programmatically with [showIndicators | showNavigators]="false"
+//   .p-carousel-indicators {
+//     display: none !important;
+//   }
+// }

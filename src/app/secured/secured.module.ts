@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 // import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DragDropModule } from 'primeng/dragdrop';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DragDropModule } from 'primeng/dragdrop';
     CarouselModule,
     MatIconModule,
     MatCheckboxModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule
   ],
   exports: [SecuredLayoutComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA]
