@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-primeng-example',
-  templateUrl: './primeng-example.component.html',
-  styleUrls: ['./primeng-example.component.scss'],
+  selector: 'app-orderlist',
+  templateUrl: './orderlist.component.html',
+  styleUrl: './orderlist.component.scss'
 })
-export class PrimengExampleComponent implements OnInit {
+export class OrderlistComponent implements OnInit {
   public imgList: any = [
     {
       id : 1,
@@ -120,73 +120,9 @@ export class PrimengExampleComponent implements OnInit {
       editing: false,
     },
   ];
-  public responsiveOptions: any[] | undefined;
-  draggedItem: any;
-  selectAll: boolean = false; // Track the state of "Select All"
 
-  // Function to find index by ID
-  getIndexById(id: number): number {
-    return this.imgList.findIndex((img:any) => img.id === id);
-  }
+    constructor() {}
 
-  // Handle the start of dragging
-  onDragStart(event: any, id: number) {
-    console.log("onDragStart => ", id);
-    this.draggedItem = this.imgList[this.getIndexById(id)];
-  }
-
-   // Handle the drop and update the order of items
-   onDrop(event: any, dropId: number) {
-    console.log("onDrop => ",event, dropId);
-    const dropIndex = this.getIndexById(dropId);
-    if (this.draggedItem) {
-      const dragIndex = this.getIndexById(this.draggedItem.id);
-      if (dragIndex !== dropIndex) {
-        // Remove the dragged item from its original position
-        this.imgList.splice(dragIndex, 1);
-        // Insert the dragged item at the drop position
-        this.imgList.splice(dropIndex, 0, this.draggedItem);
-      }
-      this.draggedItem = null;
+    ngOnInit() {
     }
-  }
-
-  // Get the 1-based index to display
-  getImageIndex(currentId: number): number {
-    return this.getIndexById(currentId) + 1; // Returning 1-based index
-  }
-
-  // Toggle select all
-  toggleSelectAll() {
-    this.imgList.forEach((img:any) => img.selected = this.selectAll);
-  }
-
-  // Update selectAll based on individual selections
-  updateSelectAll() {
-    this.selectAll = this.imgList.every((img:any) => img.selected);
-  }
-
-  saveImageDetails(item:any) {
-
-  }
-
-  ngOnInit() {
-    this.responsiveOptions = [
-      {
-        breakpoint: '1199px',
-        numVisible: 1,
-        numScroll: 1,
-      },
-      {
-        breakpoint: '991px',
-        numVisible: 2,
-        numScroll: 1,
-      },
-      {
-        breakpoint: '767px',
-        numVisible: 1,
-        numScroll: 1,
-      },
-    ];
-  }
 }

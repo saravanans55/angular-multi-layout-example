@@ -1,0 +1,16 @@
+<p-carousel [value]="imgList" [numVisible]="8" [numScroll]="3" [circular]="false"
+    [responsiveOptions]="responsiveOptions">
+
+    <ng-template let-img let-i="index" pTemplate="item">
+        <div pDraggable="img"
+             (onDragStart)="onDragStart($event, i)"
+             (onDragOver)="onDragOver($event, i)"
+             (onDrop)="onDrop($event)"
+             (onDragLeave)="onDragLeave()"
+             class="img-card border-1 surface-border border-round m-2 p-3"
+             [ngClass]="{'dragged': draggedIndex === i, 'hovered': hoverIndex === i}">
+            <img src="/images/sample-image.jpg" [alt]="img.name" class="w-full border-round" style="height: 80px;" />
+            <div class="mb-3 font-medium">{{ img.name }}</div>
+        </div>
+    </ng-template>
+</p-carousel>

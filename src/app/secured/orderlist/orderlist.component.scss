@@ -1,0 +1,11 @@
+// ::ng-deep .p-orderlist-list {
+//   display: flex;
+//   flex-wrap: nowrap; /* Ensure items stay in a single row */
+//   overflow-x: auto;  /* Enable horizontal scrolling */
+//   white-space: nowrap; /* Prevent text wrapping */
+// }
+
+// ::ng-deep .p-orderlist-item {
+//   margin-right: 10px; /* Add spacing between items */
+//   flex: 0 0 auto; /* Prevent items from shrinking */
+// }

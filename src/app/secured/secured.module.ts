@@ -1,3 +1,4 @@
+import { OrderListModule } from 'primeng/orderlist';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet, Routes } from '@angular/router';  // Import RouterModule
@@ -12,13 +13,20 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 // import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DragDropModule } from 'primeng/dragdrop';
 import { FormsModule } from '@angular/forms';
+import { OrderlistComponent } from './orderlist/orderlist.component';
+import { ImageHandlingComponent } from './image-handling/image-handling.component';
+import { MatCardModule } from '@angular/material/card';
+import { ImageHandlingV2Component } from './image-handling-v2/image-handling-v2.component';
 
 @NgModule({
   declarations: [
     SecuredLayoutComponent,
     DashboardComponent,
     ProfileComponent,
-    PrimengExampleComponent
+    PrimengExampleComponent,
+    OrderlistComponent,
+    ImageHandlingComponent,
+    ImageHandlingV2Component
   ],
   imports: [
     CommonModule,
@@ -28,7 +36,9 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatCheckboxModule,
     DragDropModule,
-    FormsModule
+    OrderListModule,
+    FormsModule,
+    MatCardModule,
   ],
   exports: [SecuredLayoutComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA]

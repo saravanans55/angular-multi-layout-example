@@ -1,0 +1,23 @@
+<div class="carousel-container">
+  <!-- Left Navigation Arrow -->
+  <button (click)="previousPage()" class="nav-arrow left-arrow">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <div class="image-list" cdkDropList (cdkDropListDropped)="drop($event)">
+    <mat-card *ngFor="let img of currentItems" cdkDrag>
+      <mat-checkbox [(ngModel)]="img.selected"></mat-checkbox>
+      <img [src]="img.image" alt="{{ img.name }}" style="height: 50px;" />
+      <div>{{ img.name }}</div>
+    </mat-card>
+  </div>
+
+  <!-- Right Navigation Arrow -->
+  <button (click)="nextPage()" class="nav-arrow right-arrow">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>
+
+<div class="select-all-container">
+  <mat-checkbox [(ngModel)]="allSelected" (change)="toggleSelectAll()">Select All</mat-checkbox>
+</div>

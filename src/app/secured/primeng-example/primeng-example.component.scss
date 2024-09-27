@@ -50,9 +50,12 @@
 ::ng-deep .p-carousel-prev, ::ng-deep .p-carousel-next {
   font-size: 13rem; /* Adjust this value to increase/decrease size */
 }
+
+/* ------- For image navigation indicator hide ---------- */
 // :host ::ng-deep p-carousel {
 //   //On later realease of PrimeNG, this can be done programmatically with [showIndicators | showNavigators]="false"
 //   .p-carousel-indicators {
 //     display: none !important;
 //   }
 // }
+/* ------- For image navigation indicator hide ---------- */

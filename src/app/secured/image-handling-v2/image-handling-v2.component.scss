@@ -1,0 +1,9 @@
+.dragged {
+  opacity: 0.5; /* Make the dragged item semi-transparent */
+  /* Optional: You can also add styles like transform or scale */
+}
+
+.hovered {
+  border: 2px dashed #007bff; /* Change border style on hover */
+  background-color: rgba(0, 123, 255, 0.1); /* Optional background color */
+}

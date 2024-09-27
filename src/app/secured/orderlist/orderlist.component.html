@@ -1,0 +1,25 @@
+<div class="card xl:flex xl:justify-content-center">
+  <p-orderList
+      [value]="imgList"
+      [listStyle]="{ 'max-height': '30rem' }"
+      [dragdrop]="true"
+      >
+          <ng-template let-product pTemplate="item">
+              <div class="flex flex-wrap p-2 align-items-center gap-3">
+                  <img
+                      src="/images/sample-image.jpg"
+                      [alt]="product.name"
+                      class="w-4rem shadow-2 flex-shrink-0 border-round" />
+                          <div class="flex-1 flex flex-column gap-2">
+                              <span class="font-bold">{{ product.name }}</span>
+                              <div class="flex align-items-center gap-2">
+                                  <i class="pi pi-tag text-sm"></i>
+                                  <span>
+                                      {{ product.id }}
+                                  </span>
+                              </div>
+                          </div>
+              </div>
+          </ng-template>
+  </p-orderList>
+</div>

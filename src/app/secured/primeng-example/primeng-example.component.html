@@ -14,7 +14,7 @@
     [responsiveOptions]="responsiveOptions">
 
     <ng-template let-img pTemplate="item">
-      <div pDraggable="img" [pDroppable]="imgList" (onDragStart)="onDragStart($event, img.id)"
+      <div pDraggable="img" pDroppable="img" (onDragStart)="onDragStart($event, img.id)"
         (onDrop)="onDrop($event, img.id)" class="img-card border-1 surface-border border-round m-2 p-3">
 
         <div class="mb-3">
