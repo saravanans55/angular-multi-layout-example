@@ -8,6 +8,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { RouterModule } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatIconModule } from '@angular/material/icon';
+import { ImageEditorModule } from '@syncfusion/ej2-angular-image-editor';
 
 @NgModule({
   declarations : [
@@ -21,7 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
     NoopAnimationsModule,
     BrowserAnimationsModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    ImageEditorModule
   ],
   providers : [
     provideAnimationsAsync()

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ImageEditor } from '@syncfusion/ej2-image-editor';
+import { Browser, getComponent } from '@syncfusion/ej2-base';
+import { ImageEditorComponent } from '@syncfusion/ej2-angular-image-editor';
 
 @Component({
   selector: 'app-primeng-example',
@@ -8,136 +11,140 @@ import { Component, OnInit } from '@angular/core';
 export class PrimengExampleComponent implements OnInit {
   public imgList: any = [
     {
-      id : 1,
+      id: 1,
       name: 'Image 1',
-      image: 'image1.jpg',
+      image: '/images/factory1.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 2,
+      id: 2,
       name: 'Image 2',
-      image: 'image1.jpg',
+      image: '/images/factory2.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 3,
+      id: 3,
       name: 'Image 3',
-      image: 'image1.jpg',
+      image: '/images/factory3.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 4,
+      id: 4,
       name: 'Image 4',
-      image: 'image1.jpg',
+      image: '/images/carfactory2.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 5,
+      id: 5,
       name: 'Image 5',
-      image: 'image1.jpg',
+      image: '/images/foodproductfactory.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 6,
+      id: 6,
       name: 'Image 6',
-      image: 'image1.jpg',
+      image: '/images/carfactory3.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 7,
+      id: 7,
       name: 'Image 7',
-      image: 'image1.jpg',
+      image: '/images/solarplant1.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 8,
+      id: 8,
       name: 'Image 8',
-      image: 'image1.jpg',
+      image: '/images/solarplant2.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 9,
+      id: 9,
       name: 'Image 9',
-      image: 'image1.jpg',
+      image: '/images/factory1.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 10,
+      id: 10,
       name: 'Image 10',
-      image: 'image1.jpg',
+      image: '/images/factory2.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 11,
+      id: 11,
       name: 'Image 11',
-      image: 'image1.jpg',
+      image: '/images/factory3.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 12,
+      id: 12,
       name: 'Image 12',
-      image: 'image1.jpg',
+      image: '/images/carfactory2.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 13,
+      id: 13,
       name: 'Image 13',
-      image: 'image1.jpg',
+      image: '/images/carfactory3.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 14,
+      id: 14,
       name: 'Image 14',
-      image: 'image1.jpg',
+      image: '/images/foodproductfactory.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 15,
+      id: 15,
       name: 'Image 15',
-      image: 'image1.jpg',
+      image: '/images/factory1.jpg',
       selected: false,
       editing: false,
     },
     {
-      id : 16,
+      id: 16,
       name: 'Image 16',
-      image: 'image1.jpg',
+      image: '/images/factory2.jpg',
       selected: false,
       editing: false,
     },
   ];
+  public viewImageDialog: boolean = false;
+  public imageEditorDialogDialog: boolean = false;
+  public imageEditorVisible: boolean = false;
   public responsiveOptions: any[] | undefined;
-  draggedItem: any;
-  selectAll: boolean = false; // Track the state of "Select All"
+  @ViewChild('imageEditor')
+  public imageEditorObj?: ImageEditorComponent;
+  public draggedItem: any;
+  public selectAll: boolean = false; // Track the state of "Select All"
+  public singleSelectedImgObj: any = null;
 
   // Function to find index by ID
-  getIndexById(id: number): number {
-    return this.imgList.findIndex((img:any) => img.id === id);
+  public getIndexById(id: number): number {
+    return this.imgList.findIndex((img: any) => img.id === id);
   }
 
   // Handle the start of dragging
-  onDragStart(event: any, id: number) {
-    console.log("onDragStart => ", id);
+  public onDragStart(event: any, id: number) {
     this.draggedItem = this.imgList[this.getIndexById(id)];
   }
 
-   // Handle the drop and update the order of items
-   onDrop(event: any, dropId: number) {
-    console.log("onDrop => ",event, dropId);
+  // Handle the drop and update the order of items
+  public onDrop(event: any, dropId: number) {
     const dropIndex = this.getIndexById(dropId);
     if (this.draggedItem) {
       const dragIndex = this.getIndexById(this.draggedItem.id);
@@ -152,22 +159,75 @@ export class PrimengExampleComponent implements OnInit {
   }
 
   // Get the 1-based index to display
-  getImageIndex(currentId: number): number {
+  public getImageIndex(currentId: number): number {
     return this.getIndexById(currentId) + 1; // Returning 1-based index
   }
 
   // Toggle select all
-  toggleSelectAll() {
-    this.imgList.forEach((img:any) => img.selected = this.selectAll);
+  public toggleSelectAll() {
+    this.imgList.forEach((img: any) => (img.selected = this.selectAll));
   }
 
   // Update selectAll based on individual selections
-  updateSelectAll() {
-    this.selectAll = this.imgList.every((img:any) => img.selected);
+  public updateSelectAll() {
+    this.selectAll = this.imgList.every((img: any) => img.selected);
   }
 
-  saveImageDetails(item:any) {
+  public saveImageDetails(item: any) {}
 
+  public created() {
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const imageEditor: any = getComponent(
+      document.getElementById('image-editor') as HTMLElement,
+      'image-editor'
+    );
+    if (Browser.isDevice) {
+      imageEditor.open(this.singleSelectedImgObj?.image);
+    } else {
+      imageEditor.open(this.singleSelectedImgObj?.image);
+    }
+    if (imageEditor.theme && window.location.href.split('#')[1]) {
+      imageEditor.theme = window.location.href.split('#')[1].split('/')[1];
+    }
+  }
+
+  // Handler used to reposition the tooltip on page scroll
+  public onScroll(): void {
+    if (document.getElementById('image-editor_sliderWrapper')) {
+      let slider: any = getComponent(
+        document.getElementById('image-editor_sliderWrapper') as HTMLElement,
+        'slider'
+      );
+      slider.refreshTooltip(slider.tooltipTarget);
+    }
+  }
+
+  public openImageEditor(img: any) {
+    console.log('img => ', img);
+    this.viewImageDialog = true;
+    this.singleSelectedImgObj = img;
+  }
+
+  public showImageView(img: any) {
+    console.log('img => ', img);
+    this.imageEditorDialogDialog = true;
+    this.singleSelectedImgObj = img;
+  }
+
+  // Called when the dialog is fully opened
+  public initializeImageEditor() {
+    this.imageEditorVisible = true; // Show the ImageEditor after the dialog is fully rendered
+    if (this.singleSelectedImgObj?.image) {
+      setTimeout(() => {
+        const imageEditor: any = getComponent(
+          document.getElementById('image-editor') as HTMLElement,
+          'image-editor'
+        );
+        if (imageEditor) {
+          imageEditor.open(this.singleSelectedImgObj.image); // Load the selected image
+        }
+      });
+    }
   }
 
   ngOnInit() {
@@ -188,5 +248,9 @@ export class PrimengExampleComponent implements OnInit {
         numScroll: 1,
       },
     ];
+    let rpHtml: any = document.getElementById('right-pane') as HTMLElement;
+    if (rpHtml) {
+      rpHtml.addEventListener('scroll', this.onScroll.bind(this));
+    }
   }
 }

@@ -17,6 +17,8 @@ import { OrderlistComponent } from './orderlist/orderlist.component';
 import { ImageHandlingComponent } from './image-handling/image-handling.component';
 import { MatCardModule } from '@angular/material/card';
 import { ImageHandlingV2Component } from './image-handling-v2/image-handling-v2.component';
+import { ImageEditorModule } from '@syncfusion/ej2-angular-image-editor';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ImageHandlingV2Component } from './image-handling-v2/image-handling-v2.
     OrderListModule,
     FormsModule,
     MatCardModule,
+    ImageEditorModule,
+    DialogModule
   ],
   exports: [SecuredLayoutComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA]
