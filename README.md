@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+Here's a rephrased version of the text in the image:
+
+- **Image Display Controls**: PrimeNG offers more related image display features, such as carousels and the ability to show a selected image in an overlay.
+  - **Note**: PrimeNG only supports displaying images in a single row. If multiple rows are needed, we will have to create a custom component.
+
+- **Drag & Drop Image Sorting**: To implement drag-and-drop functionality for sorting images, we can use Angular's official library along with a standard div-based approach.
